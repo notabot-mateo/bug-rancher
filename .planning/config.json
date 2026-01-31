@@ -1,0 +1,15 @@
+{
+  "mode": "interactive",
+  "depth": "standard",
+  "parallelization": false,
+  "commit_docs": true,
+  "workflow": {
+    "research": true,
+    "plan_check": true,
+    "verifier": true
+  },
+  "team": {
+    "lead": "Sean",
+    "ai_assist": "Mateo"
+  }
+}
