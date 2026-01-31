@@ -194,6 +194,26 @@
         "ADP": 8
       },
       "special_abilities": ["crit_bonus", "execute"]
+    },
+    {
+      "id": "isopod",
+      "name": "Isopod",
+      "role": ["starter", "traversal"],
+      "fantasy": "Humble beginner, survives anywhere",
+      "real_world_hook": "Pill bug that curls into a ball",
+      "description": "The isopod is a humble creature, but don't underestimate it. Its ability to curl into a protective ball and thrive in almost any environment makes it the perfect companion for new ranchers.",
+      "base_stats": {
+        "VIT": 13,
+        "STR": 10,
+        "CAR": 14,
+        "SPC": 8,
+        "SPD": 10,
+        "STA": 15,
+        "INS": 13,
+        "ADP": 17
+      },
+      "special_abilities": ["defensive_curl", "moisture_sense"],
+      "starter": true
     }
   ]
 }
