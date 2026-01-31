@@ -7,9 +7,11 @@ An idle breeding game where you raise mutant insects, breed them for better stat
 Currently in design phase. Working on core systems:
 - [x] Base bug roster (10 species)
 - [x] Stat system (8 primary stats)
-- [ ] Breeding mechanics
-- [ ] Incubation timers
+- [x] IV/EV genetics system
+- [x] Breeding mechanics
+- [x] Incubation timers
 - [ ] Facility upgrades
+- [ ] Combat system
 - [ ] Run/expedition system (future)
 
 ## Stat System
@@ -29,15 +31,47 @@ Each bug has 100 base stat points distributed across these 8 stats.
 
 ## Genetics System
 
-- **Base Value**: Species-determined (in `data/bugs.json`)
-- **Gene Value (GV)**: 0-31 hidden roll at birth, inherited from parents
-- **Mutations**: Rare +/- modifiers from breeding
+### IVs (Individual Values)
+- Range: 0-31 per stat
+- **Wild bugs**: Completely random IVs
+- **Bred bugs**: Parents influence offspring's IV floor
+  - Formula: `floor = avg(parent_a_iv, parent_b_iv) × 0.25`
+  - Example: Two parents with 28 STR IV → offspring STR IV floor is 7
 
-`Final Stat = Base + GV + Mutations + Facility Bonuses`
+### EVs (Effort Values)
+- Range: 0-252 per stat, 510 total cap
+- Earned through combat
+- Chance to gain: `5% × enemy_level`
+- Gain amount: 4 EVs per successful roll
+- EVs are assigned to the defeated enemy's primary stat
 
-## Data Files
+### Stat Calculation
+```
+Final Stat = (Base × level_scale) + (IV × level_scale) + (EV × 0.25 × level_scale)
+where level_scale = 1.0 + (level / 100)
+```
 
-- `data/bugs.json` - Base bug roster with stats and abilities
+### Quality Ratings
+| Rating | IV Total | Stars |
+|--------|----------|-------|
+| Perfect | 95%+ | ⭐⭐⭐⭐⭐ |
+| Great | 80-94% | ⭐⭐⭐⭐ |
+| Good | 60-79% | ⭐⭐⭐ |
+| Common | 40-59% | ⭐⭐ |
+| Trash | <40% | ⭐ |
+
+## Project Structure
+
+```
+bug-rancher/
+├── data/
+│   └── bugs.json           # Base bug roster with stats
+└── scripts/
+    ├── bug_database.gd     # Loads/queries bug species data
+    ├── bug_instance.gd     # Individual bug with IVs/EVs
+    ├── genetics.gd         # IV inheritance, EV training, stat calc
+    └── breeding_manager.gd # Breeding slots, incubation, hatching
+```
 
 ## Tech Stack
 
