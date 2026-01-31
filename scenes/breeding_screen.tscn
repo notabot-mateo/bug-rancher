@@ -1,0 +1,255 @@
+[gd_scene load_steps=2 format=3 uid="uid://breeding_screen"]
+
+[ext_resource type="Script" path="res://scripts/breeding_screen.gd" id="1_script"]
+
+[node name="BreedingScreen" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Breeding Chamber"
+horizontal_alignment = 1
+
+[node name="ParentSelection" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ParentASlot" type="Panel" parent="VBox/ParentSelection"]
+custom_minimum_size = Vector2(200, 280)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="VBox/ParentSelection/ParentASlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBox/ParentSelection/ParentASlot/VBox"]
+layout_mode = 2
+text = "Parent A"
+horizontal_alignment = 1
+
+[node name="Sprite" type="TextureRect" parent="VBox/ParentSelection/ParentASlot/VBox"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="VBox/ParentSelection/ParentASlot/VBox"]
+layout_mode = 2
+text = "Empty"
+horizontal_alignment = 1
+
+[node name="StarsLabel" type="Label" parent="VBox/ParentSelection/ParentASlot/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SelectBtn" type="Button" parent="VBox/ParentSelection/ParentASlot/VBox"]
+layout_mode = 2
+text = "Select Bug"
+
+[node name="HeartLabel" type="Label" parent="VBox/ParentSelection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "❤️"
+vertical_alignment = 1
+
+[node name="ParentBSlot" type="Panel" parent="VBox/ParentSelection"]
+custom_minimum_size = Vector2(200, 280)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="VBox/ParentSelection/ParentBSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBox/ParentSelection/ParentBSlot/VBox"]
+layout_mode = 2
+text = "Parent B"
+horizontal_alignment = 1
+
+[node name="Sprite" type="TextureRect" parent="VBox/ParentSelection/ParentBSlot/VBox"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="VBox/ParentSelection/ParentBSlot/VBox"]
+layout_mode = 2
+text = "Empty"
+horizontal_alignment = 1
+
+[node name="StarsLabel" type="Label" parent="VBox/ParentSelection/ParentBSlot/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SelectBtn" type="Button" parent="VBox/ParentSelection/ParentBSlot/VBox"]
+layout_mode = 2
+text = "Select Bug"
+
+[node name="PreviewPanel" type="Panel" parent="VBox"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="VBox/PreviewPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="PreviewTitle" type="Label" parent="VBox/PreviewPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Breeding Preview"
+horizontal_alignment = 1
+
+[node name="OutcomeLabel" type="RichTextLabel" parent="VBox/PreviewPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Select two bugs to see possible outcomes..."
+fit_content = true
+
+[node name="IVFloorLabel" type="Label" parent="VBox/PreviewPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "IV Floor Bonus: --"
+horizontal_alignment = 1
+
+[node name="BreedButton" type="Button" parent="VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+disabled = true
+text = "🥚 Start Breeding"
+
+[node name="EggSlots" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="EggSlot1" type="Panel" parent="VBox/EggSlots"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="VBox/EggSlots/EggSlot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EggLabel" type="Label" parent="VBox/EggSlots/EggSlot1/VBox"]
+layout_mode = 2
+text = "🥚 Slot 1"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="VBox/EggSlots/EggSlot1/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Empty"
+horizontal_alignment = 1
+
+[node name="HatchBtn" type="Button" parent="VBox/EggSlots/EggSlot1/VBox"]
+visible = false
+layout_mode = 2
+text = "Hatch!"
+
+[node name="BugPicker" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="BugPicker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="BugPicker/VBox"]
+layout_mode = 2
+
+[node name="CancelBtn" type="Button" parent="BugPicker/VBox/Header"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Title" type="Label" parent="BugPicker/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Select a Bug"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="BugPicker/VBox/Header"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BugPicker/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BugGrid" type="GridContainer" parent="BugPicker/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3

@@ -58,6 +58,7 @@ func create_wild_bug(species_id: String) -> Dictionary:
 func create_bred_bug(species_id: String, parent1_ivs: Dictionary, parent2_ivs: Dictionary) -> Dictionary:
 	var bug = create_wild_bug(species_id)
 	bug["ivs"] = _generate_inherited_ivs(parent1_ivs, parent2_ivs)
+	bug["color_source"] = ""  # Set by breeding screen
 	return bug
 
 func _generate_id() -> String:
