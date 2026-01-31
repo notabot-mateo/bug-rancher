@@ -1,0 +1,159 @@
+[gd_scene load_steps=2 format=3 uid="uid://shop_screen"]
+
+[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_script"]
+
+[node name="ShopScreen" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Bug Market"
+horizontal_alignment = 1
+
+[node name="BalanceLabel" type="Label" parent="VBox/Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "💰 0"
+
+[node name="TabBar" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="SellTab" type="Button" parent="VBox/TabBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "Sell Bugs"
+
+[node name="BuyTab" type="Button" parent="VBox/TabBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Buy Items"
+
+[node name="SellPanel" type="Panel" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="VBox/SellPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Instructions" type="Label" parent="VBox/SellPanel/VBox"]
+layout_mode = 2
+text = "Select bugs to sell. Higher quality = higher price!"
+horizontal_alignment = 1
+
+[node name="PriceGuide" type="RichTextLabel" parent="VBox/SellPanel/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Price Guide:[/b]
+⭐ = 10g  |  ⭐⭐ = 25g  |  ⭐⭐⭐ = 50g
+⭐⭐⭐⭐ = 100g  |  ⭐⭐⭐⭐⭐ = 250g
+Hybrids: +50% bonus!"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/SellPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BugGrid" type="GridContainer" parent="VBox/SellPanel/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="SelectedPanel" type="Panel" parent="VBox/SellPanel/VBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox/SellPanel/VBox/SelectedPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="SelectedInfo" type="VBoxContainer" parent="VBox/SellPanel/VBox/SelectedPanel/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SelectedLabel" type="Label" parent="VBox/SellPanel/VBox/SelectedPanel/HBox/SelectedInfo"]
+layout_mode = 2
+text = "Selected: 0 bugs"
+
+[node name="TotalLabel" type="Label" parent="VBox/SellPanel/VBox/SelectedPanel/HBox/SelectedInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Total: 💰 0"
+
+[node name="SellButton" type="Button" parent="VBox/SellPanel/VBox/SelectedPanel/HBox"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+disabled = true
+text = "💰 Sell All"
+
+[node name="BuyPanel" type="Panel" parent="VBox"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="VBox/BuyPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ComingSoon" type="Label" parent="VBox/BuyPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🏗️ Shop items coming in Phase 4!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -5,15 +5,16 @@ README.md::TextFile::-1::1769890494::0::1::::<><>::
 ::res://data/::1769891707
 bugs.json::JSON::-1::1769890494::0::1::::<><>::
 hybrid_names.json::JSON::-1::1769891707::0::1::::<><>::
-::res://scenes/::1769891455
+::res://scenes/::1769891904
 breeding_screen.tscn::PackedScene::-1::1769891455::0::1::::<><>::res://scripts/breeding_screen.gd
 collection_screen.tscn::PackedScene::-1::1769890641::0::1::::<><>::res://scripts/collection_screen.gd
 compendium_screen.tscn::PackedScene::-1::1769890589::0::1::::<><>::res://scripts/compendium_screen.gd
 main.tscn::PackedScene::-1::1769890561::0::1::::<><>::res://scripts/main.gd
+shop_screen.tscn::PackedScene::-1::1769891904::0::1::::<><>::res://scripts/shop_screen.gd
 ::res://scenes/components/::1769890641
 bug_card.tscn::PackedScene::-1::1769890641::0::1::::<><>::res://scripts/bug_card.gd
 species_slot.tscn::PackedScene::-1::1769890589::0::1::::<><>::res://scripts/species_slot.gd
-::res://scripts/::1769891455
+::res://scripts/::1769891904
 breeding_manager.gd::GDScript::-1::1769890696::0::1::::<>Node<>::
 breeding_screen.gd::GDScript::-1::1769891455::0::1::::<>Control<>::
 bug_card.gd::GDScript::-1::1769890641::0::1::::<>Control<>::
@@ -24,5 +25,6 @@ compendium_screen.gd::GDScript::-1::1769890589::0::1::::<>Control<>::
 game_manager.gd::GDScript::-1::1769891470::0::1::::<>Node<>::
 genetics.gd::GDScript::-1::1769890674::0::1::::GeneticsSystem<>Node<>::
 hybrid_generator.gd::GDScript::-1::1769891722::0::1::::HybridGenerator<>Node<>::
-main.gd::GDScript::-1::1769891464::0::1::::<>Control<>::
+main.gd::GDScript::-1::1769891912::0::1::::<>Control<>::
+shop_screen.gd::GDScript::-1::1769891904::0::1::::<>Control<>::
 species_slot.gd::GDScript::-1::1769890589::0::1::::<>Button<>::

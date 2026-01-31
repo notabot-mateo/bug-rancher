@@ -12,6 +12,7 @@ extends Control
 var compendium_scene = preload("res://scenes/compendium_screen.tscn")
 var collection_scene = preload("res://scenes/collection_screen.tscn")
 var breeding_scene = preload("res://scenes/breeding_screen.tscn")
+var shop_scene = preload("res://scenes/shop_screen.tscn")
 
 var current_screen: Control = null
 
@@ -65,5 +66,9 @@ func _show_breeding() -> void:
 	screen_container.add_child(current_screen)
 
 func _on_shop_pressed() -> void:
-	# TODO: Shop screen
-	pass
+	_show_shop()
+
+func _show_shop() -> void:
+	_clear_screen()
+	current_screen = shop_scene.instantiate()
+	screen_container.add_child(current_screen)
