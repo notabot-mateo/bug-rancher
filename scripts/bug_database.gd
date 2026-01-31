@@ -1,66 +1,59 @@
-## BugDatabase
-## Loads and provides access to bug species data from JSON
 extends Node
 
-const BUGS_PATH := "res://data/bugs.json"
+## Bug Rancher - Bug Database
+## Loads and provides access to bug species data
 
 var _data: Dictionary = {}
 var _bugs: Array = []
-var _bugs_by_id: Dictionary = {}
 
 func _ready() -> void:
-	load_bugs()
+	_load_database()
 
-func load_bugs() -> void:
-	var file := FileAccess.open(BUGS_PATH, FileAccess.READ)
-	if not file:
-		push_error("Failed to load bugs.json")
-		return
-	
-	var json := JSON.new()
-	var error := json.parse(file.get_as_text())
-	file.close()
-	
-	if error != OK:
-		push_error("Failed to parse bugs.json: " + json.get_error_message())
-		return
-	
-	_data = json.data
-	_bugs = _data.get("bugs", [])
-	
-	# Index by ID for fast lookup
-	for bug in _bugs:
-		_bugs_by_id[bug.id] = bug
-	
-	print("Loaded %d bug species" % _bugs.size())
+func _load_database() -> void:
+	var file = FileAccess.open("res://data/bugs.json", FileAccess.READ)
+	if file:
+		var json = JSON.new()
+		var error = json.parse(file.get_as_text())
+		file.close()
+		if error == OK:
+			_data = json.data
+			_bugs = _data.get("bugs", [])
+			print("BugDatabase: Loaded ", _bugs.size(), " species")
+		else:
+			push_error("Failed to parse bugs.json")
+	else:
+		push_error("Failed to open bugs.json")
 
-## Get all bug species
 func get_all_bugs() -> Array:
 	return _bugs
 
-## Get a bug by ID
-func get_bug(bug_id: String) -> Dictionary:
-	return _bugs_by_id.get(bug_id, {})
+func get_all_species_ids() -> Array:
+	var ids = []
+	for bug in _bugs:
+		ids.append(bug.id)
+	return ids
 
-## Get base stat value for a bug
-func get_base_stat(bug_id: String, stat: String) -> int:
-	var bug := get_bug(bug_id)
+func get_bug(species_id: String) -> Dictionary:
+	for bug in _bugs:
+		if bug.id == species_id:
+			return bug
+	return {}
+
+func get_base_stat(species_id: String, stat: String) -> int:
+	var bug = get_bug(species_id)
 	if bug.is_empty():
 		return 0
-	return bug.get("base_stats", {}).get(stat, 0)
+	return bug.base_stats.get(stat, 0)
 
-## Get all stat names
-func get_stat_names() -> Array:
-	return _data.get("meta", {}).get("stats", [])
-
-## Get stat description
-func get_stat_description(stat: String) -> String:
-	return _data.get("meta", {}).get("stat_descriptions", {}).get(stat, "")
-
-## Get bugs by role
 func get_bugs_by_role(role: String) -> Array:
-	var result := []
+	var result = []
 	for bug in _bugs:
 		if role in bug.get("role", []):
 			result.append(bug)
 	return result
+
+func get_stat_descriptions() -> Dictionary:
+	return _data.get("meta", {}).get("stat_descriptions", {})
+
+func get_species_count() -> int:
+	return _bugs.size()

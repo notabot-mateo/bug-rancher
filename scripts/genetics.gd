@@ -1,6 +1,7 @@
 ## Genetics System
 ## Handles IV inheritance, EV training, and stat calculations
 extends Node
+class_name GeneticsSystem
 
 ## IV Constants
 const IV_MIN := 0

@@ -94,8 +94,8 @@ func _calculate_incubation_time(parent_a: BugInstance, parent_b: BugInstance) ->
 	var base_time := BASE_INCUBATION_SECONDS
 	
 	# Higher ADP = faster incubation
-	var avg_adp := (parent_a.ivs.get("ADP", 15) + parent_b.ivs.get("ADP", 15)) / 2.0
-	var adp_bonus := avg_adp / 31.0 * 0.2  # Up to 20% faster
+	var avg_adp: float = (float(parent_a.ivs.get("ADP", 15)) + float(parent_b.ivs.get("ADP", 15))) / 2.0
+	var adp_bonus: float = avg_adp / 31.0 * 0.2  # Up to 20% faster
 	
 	var final_time := int(base_time * (1.0 - adp_bonus))
 	return maxi(60, final_time)  # Minimum 1 minute
@@ -153,7 +153,7 @@ func get_slot(slot_index: int) -> BreedingSlot:
 ## Preview offspring IV floors before breeding
 func preview_offspring(parent_a: BugInstance, parent_b: BugInstance) -> Dictionary:
 	return {
-		"iv_floors": Genetics.preview_iv_floors(parent_a.ivs, parent_b.ivs),
+		"iv_floors": GeneticsSystem.preview_iv_floors(parent_a.ivs, parent_b.ivs),
 		"incubation_seconds": _calculate_incubation_time(parent_a, parent_b)
 	}
 

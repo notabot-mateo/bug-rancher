@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://collection_screen"]
+
+[ext_resource type="Script" path="res://scripts/collection_screen.gd" id="1_script"]
+
+[node name="CollectionScreen" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBox/Header"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "← Back"
+
+[node name="SpeciesName" type="Label" parent="VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Species Name"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBox/Header"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="GuidebookPanel" type="Panel" parent="VBox"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="GuidebookText" type="RichTextLabel" parent="VBox/GuidebookPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Guidebook entry..."
+fit_content = true
+
+[node name="CardContainer" type="ScrollContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="CardHand" type="HBoxContainer" parent="VBox/CardContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = -60
+
+[node name="EmptyLabel" type="Label" parent="VBox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "No bugs of this species yet!"
+horizontal_alignment = 1

@@ -27,8 +27,8 @@ static func create_wild(species_id: String) -> BugInstance:
 	bug.id = _generate_id()
 	bug.species_id = species_id
 	bug.level = 1
-	bug.ivs = Genetics.generate_random_ivs()
-	bug.evs = Genetics.create_empty_evs()
+	bug.ivs = GeneticsSystem.generate_random_ivs()
+	bug.evs = GeneticsSystem.create_empty_evs()
 	bug.generation = 0
 	bug.created_at = int(Time.get_unix_time_from_system())
 	bug.hatched_at = bug.created_at
@@ -44,8 +44,8 @@ static func create_offspring(
 	bug.id = _generate_id()
 	bug.species_id = species_id
 	bug.level = 1
-	bug.ivs = Genetics.generate_offspring_ivs(parent_a.ivs, parent_b.ivs)
-	bug.evs = Genetics.create_empty_evs()
+	bug.ivs = GeneticsSystem.generate_offspring_ivs(parent_a.ivs, parent_b.ivs)
+	bug.evs = GeneticsSystem.create_empty_evs()
 	bug.parent_a_id = parent_a.id
 	bug.parent_b_id = parent_b.id
 	bug.generation = maxi(parent_a.generation, parent_b.generation) + 1
@@ -59,35 +59,35 @@ func get_base_stats() -> Dictionary:
 
 ## Calculate current stats (base + IVs + EVs + level)
 func get_current_stats() -> Dictionary:
-	return Genetics.calculate_all_stats(get_base_stats(), ivs, evs, level)
+	return GeneticsSystem.calculate_all_stats(get_base_stats(), ivs, evs, level)
 
 ## Get a single current stat
 func get_stat(stat: String) -> int:
 	var base: int = BugDatabase.get_base_stat(species_id, stat)
-	return Genetics.calculate_stat(base, ivs.get(stat, 0), evs.get(stat, 0), level)
+	return GeneticsSystem.calculate_stat(base, ivs.get(stat, 0), evs.get(stat, 0), level)
 
 ## Get IV quality rating
 func get_iv_rating() -> String:
-	return Genetics.rate_ivs(ivs)
+	return GeneticsSystem.rate_ivs(ivs)
 
 ## Get IV star rating (1-5)
 func get_stars() -> int:
-	return Genetics.get_iv_stars(ivs)
+	return GeneticsSystem.get_iv_stars(ivs)
 
 ## Try to gain EVs from combat
 func try_gain_combat_evs(enemy_level: int, enemy_primary_stat: String) -> Dictionary:
-	var gains := Genetics.try_gain_evs(evs, enemy_level, enemy_primary_stat)
+	var gains := GeneticsSystem.try_gain_evs(evs, enemy_level, enemy_primary_stat)
 	if not gains.is_empty():
-		evs = Genetics.apply_ev_gains(evs, gains)
+		evs = GeneticsSystem.apply_ev_gains(evs, gains)
 	return gains
 
 ## Get total EV points invested
 func get_total_evs() -> int:
-	return Genetics.get_total_evs(evs)
+	return GeneticsSystem.get_total_evs(evs)
 
 ## Check if bug can gain more EVs
 func can_gain_evs() -> bool:
-	return get_total_evs() < Genetics.EV_MAX_TOTAL
+	return get_total_evs() < GeneticsSystem.EV_MAX_TOTAL
 
 ## Get display name
 func get_display_name() -> String:

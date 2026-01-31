@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=3 uid="uid://bug_card"]
+
+[ext_resource type="Script" path="res://scripts/bug_card.gd" id="1_script"]
+
+[node name="BugCard" type="Control"]
+custom_minimum_size = Vector2(280, 400)
+layout_mode = 2
+script = ExtResource("1_script")
+
+[node name="CardBase" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Front" type="Control" parent="CardBase"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CardBase/Front"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="SpriteContainer" type="CenterContainer" parent="CardBase/Front/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite" type="TextureRect" parent="CardBase/Front/VBox/SpriteContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="CardBase/Front/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Bug Name"
+horizontal_alignment = 1
+
+[node name="NicknameLabel" type="Label" parent="CardBase/Front/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+text = "\"Nickname\""
+horizontal_alignment = 1
+
+[node name="StarsLabel" type="Label" parent="CardBase/Front/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "⭐⭐⭐"
+horizontal_alignment = 1
+
+[node name="TopStatLabel" type="Label" parent="CardBase/Front/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Best: STR 25"
+horizontal_alignment = 1
+
+[node name="TapHint" type="Label" parent="CardBase/Front/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+text = "Tap to flip"
+horizontal_alignment = 1
+
+[node name="Back" type="Control" parent="CardBase"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CardBase/Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="HeaderLabel" type="Label" parent="CardBase/Back/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="StatsContainer" type="VBoxContainer" parent="CardBase/Back/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 3
+
+[node name="TapHint" type="Label" parent="CardBase/Back/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+text = "Tap to flip back"
+horizontal_alignment = 1
