@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "stat_total": 100,
+    "stats": ["VIT", "STR", "CAR", "SPC", "SPD", "STA", "INS", "ADP"],
+    "stat_descriptions": {
+      "VIT": "Vitality - HP pool, survival",
+      "STR": "Strength - Melee damage, carry weight",
+      "CAR": "Carapace - Physical defense",
+      "SPC": "Special - Elemental/magic damage, unique abilities",
+      "SPD": "Speed - Dodge, attack speed, turn order",
+      "STA": "Stamina - Action economy, endurance",
+      "INS": "Instinct - Detection, loot find, ambush resist",
+      "ADP": "Adaptation - Mutation chance, environment resist"
+    }
+  },
+  "bugs": [
+    {
+      "id": "rhino_beetle",
+      "name": "Rhinoceros Beetle",
+      "role": ["tank", "carry"],
+      "fantasy": "Unstoppable freight train, slow but immovable",
+      "real_world_hook": "Strongest insect relative to size",
+      "base_stats": {
+        "VIT": 16,
+        "STR": 18,
+        "CAR": 17,
+        "SPC": 3,
+        "SPD": 5,
+        "STA": 18,
+        "INS": 8,
+        "ADP": 15
+      },
+      "special_abilities": ["ram", "knockback"]
+    },
+    {
+      "id": "bombardier_beetle",
+      "name": "Bombardier Beetle",
+      "role": ["combat"],
+      "fantasy": "Walking mortar, area denial",
+      "real_world_hook": "Sprays boiling chemicals",
+      "base_stats": {
+        "VIT": 12,
+        "STR": 8,
+        "CAR": 14,
+        "SPC": 20,
+        "SPD": 9,
+        "STA": 13,
+        "INS": 10,
+        "ADP": 14
+      },
+      "special_abilities": ["acid_spray", "aoe"]
+    },
+    {
+      "id": "trap_jaw_ant",
+      "name": "Trap-Jaw Ant",
+      "role": ["combat"],
+      "fantasy": "Lightning strike assassin",
+      "real_world_hook": "Fastest strike in nature",
+      "base_stats": {
+        "VIT": 10,
+        "STR": 17,
+        "CAR": 8,
+        "SPC": 12,
+        "SPD": 19,
+        "STA": 11,
+        "INS": 14,
+        "ADP": 9
+      },
+      "special_abilities": ["burst_damage", "knockback", "stun"]
+    },
+    {
+      "id": "leafcutter_ant",
+      "name": "Leafcutter Ant",
+      "role": ["carry"],
+      "fantasy": "Tireless worker, team player",
+      "real_world_hook": "Farms fungus, carries 50x weight",
+      "base_stats": {
+        "VIT": 11,
+        "STR": 16,
+        "CAR": 10,
+        "SPC": 4,
+        "SPD": 12,
+        "STA": 20,
+        "INS": 12,
+        "ADP": 15
+      },
+      "special_abilities": ["team_buff", "resource_bonus"]
+    },
+    {
+      "id": "diving_beetle",
+      "name": "Diving Beetle",
+      "role": ["traversal"],
+      "fantasy": "Aquatic scout, reaches hidden areas",
+      "real_world_hook": "Swims with air bubble",
+      "base_stats": {
+        "VIT": 13,
+        "STR": 10,
+        "CAR": 12,
+        "SPC": 11,
+        "SPD": 16,
+        "STA": 14,
+        "INS": 9,
+        "ADP": 15
+      },
+      "special_abilities": ["water_traverse", "underwater_loot"]
+    },
+    {
+      "id": "glowworm",
+      "name": "Glowworm",
+      "role": ["support", "traversal"],
+      "fantasy": "Living lantern, lure and reveal",
+      "real_world_hook": "Bioluminescence",
+      "base_stats": {
+        "VIT": 8,
+        "STR": 4,
+        "CAR": 6,
+        "SPC": 18,
+        "SPD": 14,
+        "STA": 10,
+        "INS": 20,
+        "ADP": 20
+      },
+      "special_abilities": ["light", "lure", "breed_catalyst"]
+    },
+    {
+      "id": "assassin_bug",
+      "name": "Assassin Bug",
+      "role": ["combat"],
+      "fantasy": "Patient predator, venomous strikes",
+      "real_world_hook": "Ambush predator, venomous",
+      "base_stats": {
+        "VIT": 9,
+        "STR": 13,
+        "CAR": 7,
+        "SPC": 17,
+        "SPD": 15,
+        "STA": 11,
+        "INS": 18,
+        "ADP": 10
+      },
+      "special_abilities": ["stealth", "poison_dot", "ambush"]
+    },
+    {
+      "id": "dung_beetle",
+      "name": "Dung Beetle",
+      "role": ["carry", "traversal"],
+      "fantasy": "Never lost, hauls anything round",
+      "real_world_hook": "Rolls balls, navigates by stars",
+      "base_stats": {
+        "VIT": 14,
+        "STR": 17,
+        "CAR": 15,
+        "SPC": 3,
+        "SPD": 8,
+        "STA": 17,
+        "INS": 16,
+        "ADP": 10
+      },
+      "special_abilities": ["navigation", "sphere_carry"]
+    },
+    {
+      "id": "cicada",
+      "name": "Cicada",
+      "role": ["traversal", "combat"],
+      "fantasy": "Explosive takeoff, sonic screamer",
+      "real_world_hook": "Emerges after years, loud AF",
+      "base_stats": {
+        "VIT": 10,
+        "STR": 6,
+        "CAR": 9,
+        "SPC": 16,
+        "SPD": 20,
+        "STA": 9,
+        "INS": 15,
+        "ADP": 15
+      },
+      "special_abilities": ["flight_burst", "sonic_stun"]
+    },
+    {
+      "id": "mantis",
+      "name": "Mantis",
+      "role": ["combat"],
+      "fantasy": "Precision killer, one-shot crits",
+      "real_world_hook": "Precision strikes, patience",
+      "base_stats": {
+        "VIT": 8,
+        "STR": 19,
+        "CAR": 6,
+        "SPC": 14,
+        "SPD": 18,
+        "STA": 10,
+        "INS": 17,
+        "ADP": 8
+      },
+      "special_abilities": ["crit_bonus", "execute"]
+    }
+  ]
+}
