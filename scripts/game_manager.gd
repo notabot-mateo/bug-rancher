@@ -14,7 +14,19 @@ var player_data: Dictionary = {
 	"discovered_species": [],  # Species IDs the player has seen
 	"collection": [],  # Array of BugInstance dictionaries
 	"breeding_slots": [],
-	"upgrades": {}
+	"upgrades": {},
+	# Phase 4 additions
+	"upgrade_levels": {
+		"egg_slots": 1,
+		"incubator_speed": 0,
+		"genetics_lab": 0,
+		"hybrid_chamber": 0
+	},
+	"consumables": {},
+	"owned_cosmetics": [],
+	"equipped_cosmetics": [],
+	"daily_sells": {},
+	"last_sell_reset": 0
 }
 
 var bug_instances: Array = []  # Runtime BugInstance objects
@@ -61,6 +73,12 @@ func create_bred_bug(species_id: String, parent1_ivs: Dictionary, parent2_ivs: D
 	bug["color_source"] = ""  # Set by breeding screen
 	return bug
 
+func create_bred_bug_with_bonus(species_id: String, parent1_ivs: Dictionary, parent2_ivs: Dictionary, iv_bonus: float) -> Dictionary:
+	var bug = create_wild_bug(species_id)
+	bug["ivs"] = _generate_inherited_ivs_with_bonus(parent1_ivs, parent2_ivs, iv_bonus)
+	bug["color_source"] = ""
+	return bug
+
 func _generate_id() -> String:
 	return str(randi()) + str(Time.get_ticks_msec())
 
@@ -77,10 +95,16 @@ func _generate_empty_evs() -> Dictionary:
 	return evs
 
 func _generate_inherited_ivs(p1: Dictionary, p2: Dictionary) -> Dictionary:
+	return _generate_inherited_ivs_with_bonus(p1, p2, 0.0)
+
+func _generate_inherited_ivs_with_bonus(p1: Dictionary, p2: Dictionary, bonus: float) -> Dictionary:
 	var ivs = {}
 	for stat in ["VIT", "STR", "CAR", "SPC", "SPD", "STA", "INS", "ADP"]:
 		var avg = (p1.get(stat, 0) + p2.get(stat, 0)) / 2.0
-		var floor_iv = int(avg * 0.25)
+		# Base floor is 25% of parent average, plus any bonus
+		var floor_mult = 0.25 + bonus
+		var floor_iv = int(avg * floor_mult)
+		floor_iv = mini(floor_iv, 31)  # Cap at max IV
 		ivs[stat] = randi_range(floor_iv, 31)
 	return ivs
 

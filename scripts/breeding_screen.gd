@@ -32,7 +32,7 @@ var selecting_for: String = ""  # "a" or "b"
 
 var egg_data: Dictionary = {}
 var egg_hatch_time: int = 0
-const INCUBATION_SECONDS := 60  # 1 minute for testing
+const BASE_INCUBATION_SECONDS := 60  # 1 minute for testing
 
 var hybrid_gen: HybridGenerator
 
@@ -181,22 +181,31 @@ func _on_breed_pressed() -> void:
 	if parent_a.is_empty() or parent_b.is_empty():
 		return
 	
-	# Determine offspring
+	# Get upgrade bonuses
+	var hybrid_bonus = Upgrades.get_hybrid_chance_bonus()
+	var iv_bonus = Upgrades.get_iv_floor_bonus()
+	var speed_mult = Upgrades.get_incubation_multiplier()
+	
+	# Determine offspring (with hybrid chance bonus)
 	var outcome: Dictionary
 	if hybrid_gen.is_hybrid(parent_a.species_id) or hybrid_gen.is_hybrid(parent_b.species_id):
 		outcome = hybrid_gen.roll_hybrid_breeding_outcome(parent_a.species_id, parent_b.species_id)
 	else:
-		outcome = hybrid_gen.roll_breeding_outcome(parent_a.species_id, parent_b.species_id)
+		outcome = _roll_breeding_with_bonus(parent_a.species_id, parent_b.species_id, hybrid_bonus)
 	
-	# Create egg data
+	# Create egg data (store IV bonus for hatching)
 	egg_data = {
 		"species_id": outcome.species_id,
 		"color_source": outcome.get("color_source", outcome.species_id),
 		"parent_a_ivs": parent_a.ivs.duplicate(),
 		"parent_b_ivs": parent_b.ivs.duplicate(),
-		"outcome_type": outcome.type
+		"outcome_type": outcome.type,
+		"iv_bonus": iv_bonus  # Apply when hatching
 	}
-	egg_hatch_time = int(Time.get_unix_time_from_system()) + INCUBATION_SECONDS
+	
+	# Calculate incubation time with speed bonus
+	var incubation_time = int(BASE_INCUBATION_SECONDS * speed_mult)
+	egg_hatch_time = int(Time.get_unix_time_from_system()) + incubation_time
 	
 	egg_timer_label.text = "Incubating..."
 	breed_button.disabled = true
@@ -206,15 +215,51 @@ func _on_breed_pressed() -> void:
 	parent_b = {}
 	_update_ui()
 
+func _roll_breeding_with_bonus(species_a: String, species_b: String, hybrid_bonus: float) -> Dictionary:
+	if species_a == species_b:
+		return { "type": "same", "species_id": species_a }
+	
+	# Base hybrid chance is 50%, add bonus
+	var hybrid_chance = 0.50 + hybrid_bonus
+	var base_chance = (1.0 - hybrid_chance) / 2.0  # Split remaining between A and B
+	
+	var roll = randf()
+	
+	if roll < base_chance:
+		return { 
+			"type": "dominant_a", 
+			"species_id": species_a,
+			"color_source": species_b
+		}
+	elif roll < base_chance * 2:
+		return {
+			"type": "dominant_b",
+			"species_id": species_b,
+			"color_source": species_a
+		}
+	else:
+		var hybrid_id: String
+		if randf() < 0.5:
+			hybrid_id = "%s_%s" % [species_a, species_b]
+		else:
+			hybrid_id = "%s_%s" % [species_b, species_a]
+		return {
+			"type": "hybrid",
+			"species_id": hybrid_id,
+			"color_source": "blended"
+		}
+
 func _on_hatch_pressed() -> void:
 	if egg_data.is_empty():
 		return
 	
-	# Create the new bug with inherited IVs
-	var new_bug = GameManager.create_bred_bug(
+	# Create the new bug with inherited IVs (including any IV bonus)
+	var iv_bonus = egg_data.get("iv_bonus", 0.0)
+	var new_bug = GameManager.create_bred_bug_with_bonus(
 		egg_data.species_id,
 		egg_data.parent_a_ivs,
-		egg_data.parent_b_ivs
+		egg_data.parent_b_ivs,
+		iv_bonus
 	)
 	new_bug["color_source"] = egg_data.color_source
 	

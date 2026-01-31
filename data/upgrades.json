@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "description": "Nursery upgrade definitions"
+  },
+  "permanent": {
+    "egg_slots": {
+      "name": "Egg Slots",
+      "description": "Additional breeding slots",
+      "max_level": 3,
+      "base_value": 1,
+      "per_level": [1, 2, 3],
+      "prices": [0, 500, 2000]
+    },
+    "incubator_speed": {
+      "name": "Incubator Speed",
+      "description": "Faster egg hatching",
+      "max_level": 3,
+      "effect_type": "multiply",
+      "per_level": [1.0, 0.80, 0.65, 0.50],
+      "prices": [0, 300, 800, 2000]
+    },
+    "genetics_lab": {
+      "name": "Genetics Lab",
+      "description": "IV floor boost when breeding",
+      "max_level": 3,
+      "effect_type": "add",
+      "per_level": [0.0, 0.05, 0.10, 0.15],
+      "prices": [0, 400, 1200, 3000]
+    },
+    "hybrid_chamber": {
+      "name": "Hybrid Chamber",
+      "description": "Increased hybrid breeding chance",
+      "max_level": 2,
+      "effect_type": "add",
+      "base_hybrid_chance": 0.50,
+      "per_level": [0.0, 0.10, 0.20],
+      "prices": [0, 1000, 3500]
+    }
+  },
+  "consumables": {
+    "iv_scanner": {
+      "name": "IV Scanner",
+      "description": "Reveal exact IVs of one bug",
+      "price": 50,
+      "stack_max": 99
+    },
+    "fertility_boost": {
+      "name": "Fertility Boost",
+      "description": "+25% IV floor for next breeding",
+      "price": 150,
+      "effect": {"iv_floor_bonus": 0.25},
+      "stack_max": 10
+    },
+    "lucky_charm": {
+      "name": "Lucky Charm",
+      "description": "+15% hybrid chance for next breeding",
+      "price": 200,
+      "effect": {"hybrid_chance_bonus": 0.15},
+      "stack_max": 10
+    },
+    "instant_hatch": {
+      "name": "Instant Hatch",
+      "description": "Skip incubation timer",
+      "price": 100,
+      "stack_max": 10
+    }
+  },
+  "cosmetics": {
+    "moss_bed": {
+      "name": "Cozy Moss Bed",
+      "description": "A soft bed of moss for your bugs",
+      "price": 100,
+      "bonus": null
+    },
+    "terrarium": {
+      "name": "Crystal Terrarium",
+      "description": "Fancy display case",
+      "price": 250,
+      "bonus": {"sell_bonus": 0.02}
+    },
+    "egg_stand": {
+      "name": "Golden Egg Stand",
+      "description": "Premium incubation equipment",
+      "price": 500,
+      "bonus": {"iv_floor_bonus": 0.05}
+    },
+    "specimen_jar": {
+      "name": "Rare Specimen Jar",
+      "description": "Mysterious jar that attracts hybrids",
+      "price": 1000,
+      "bonus": {"hybrid_chance_bonus": 0.05}
+    }
+  },
+  "daily_limits": {
+    "base_species": 3,
+    "hybrid_species": 5
+  }
+}

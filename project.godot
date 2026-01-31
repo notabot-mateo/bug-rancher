@@ -17,6 +17,7 @@ GameManager="*res://scripts/game_manager.gd"
 BugDatabase="*res://scripts/bug_database.gd"
 Genetics="*res://scripts/genetics.gd"
 HybridGen="*res://scripts/hybrid_generator.gd"
+Upgrades="*res://scripts/upgrade_manager.gd"
 
 [display]
 
