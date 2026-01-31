@@ -1,0 +1,458 @@
+{
+  "meta": {
+    "description": "Creative names for all hybrid species. Key format: dominant_secondary",
+    "naming_notes": "Names blend parent species and hint at combined abilities"
+  },
+  "hybrids": {
+    "rhino_beetle_bombardier_beetle": {
+      "name": "Siege Beetle",
+      "fantasy": "An armored artillery platform that charges in and explodes"
+    },
+    "rhino_beetle_trap_jaw_ant": {
+      "name": "Hammerhorn",
+      "fantasy": "Devastating charges with a skull-crushing snap at the end"
+    },
+    "rhino_beetle_leafcutter_ant": {
+      "name": "Bulldozer Beetle",
+      "fantasy": "Clears paths and hauls twice its weight without slowing"
+    },
+    "rhino_beetle_diving_beetle": {
+      "name": "Ironback Swimmer",
+      "fantasy": "An aquatic tank that rams underwater obstacles"
+    },
+    "rhino_beetle_glowworm": {
+      "name": "Lantern Charger",
+      "fantasy": "A glowing battering ram that lights the way forward"
+    },
+    "rhino_beetle_assassin_bug": {
+      "name": "Ambush Rhino",
+      "fantasy": "Strikes from shadows with unstoppable force"
+    },
+    "rhino_beetle_dung_beetle": {
+      "name": "Titan Roller",
+      "fantasy": "Pushes boulders and enemies with equal ease"
+    },
+    "rhino_beetle_cicada": {
+      "name": "Thunder Beetle",
+      "fantasy": "Charges with a deafening sonic boom"
+    },
+    "rhino_beetle_mantis": {
+      "name": "Jouster",
+      "fantasy": "Precision charges that impale targets on contact"
+    },
+    "rhino_beetle_isopod": {
+      "name": "Armadillo Beetle",
+      "fantasy": "Can curl into an indestructible ball and roll through enemies"
+    },
+
+    "bombardier_beetle_rhino_beetle": {
+      "name": "Mortar Tank",
+      "fantasy": "Heavy armor with explosive payload delivery"
+    },
+    "bombardier_beetle_trap_jaw_ant": {
+      "name": "Blastjaw",
+      "fantasy": "Chemical spray followed by a stunning snap"
+    },
+    "bombardier_beetle_leafcutter_ant": {
+      "name": "Fumigator",
+      "fantasy": "Sprays acid while allies gather resources safely"
+    },
+    "bombardier_beetle_diving_beetle": {
+      "name": "Depth Charge",
+      "fantasy": "Explodes underwater with devastating effect"
+    },
+    "bombardier_beetle_glowworm": {
+      "name": "Flare Beetle",
+      "fantasy": "Blinds enemies with burning chemical light"
+    },
+    "bombardier_beetle_assassin_bug": {
+      "name": "Gas Stalker",
+      "fantasy": "Silent approach, toxic cloud execution"
+    },
+    "bombardier_beetle_dung_beetle": {
+      "name": "Stinkbomb Roller",
+      "fantasy": "Rolls explosive payloads into enemy lines"
+    },
+    "bombardier_beetle_cicada": {
+      "name": "Screaming Bomber",
+      "fantasy": "Sonic distraction followed by chemical assault"
+    },
+    "bombardier_beetle_mantis": {
+      "name": "Chemical Assassin",
+      "fantasy": "Precision acid strikes that melt through armor"
+    },
+    "bombardier_beetle_isopod": {
+      "name": "Acid Pillbug",
+      "fantasy": "Rolls into a ball and sprays acid in all directions"
+    },
+
+    "trap_jaw_ant_rhino_beetle": {
+      "name": "Snaphorn",
+      "fantasy": "Charges with jaws locked, releases on impact"
+    },
+    "trap_jaw_ant_bombardier_beetle": {
+      "name": "Blast Snapper",
+      "fantasy": "Jaw strike triggers explosive chemical reaction"
+    },
+    "trap_jaw_ant_leafcutter_ant": {
+      "name": "Harvestjaw",
+      "fantasy": "Cuts through anything at lightning speed"
+    },
+    "trap_jaw_ant_diving_beetle": {
+      "name": "Reef Snapper",
+      "fantasy": "Underwater ambush predator with crushing jaws"
+    },
+    "trap_jaw_ant_glowworm": {
+      "name": "Flash Striker",
+      "fantasy": "Blinds with light, strikes in the confusion"
+    },
+    "trap_jaw_ant_assassin_bug": {
+      "name": "Silent Snap",
+      "fantasy": "No one hears the strike until it's too late"
+    },
+    "trap_jaw_ant_dung_beetle": {
+      "name": "Cracker Beetle",
+      "fantasy": "Crushes spherical objects with a single snap"
+    },
+    "trap_jaw_ant_cicada": {
+      "name": "Sonic Snapper",
+      "fantasy": "Stuns with sound, finishes with jaws"
+    },
+    "trap_jaw_ant_mantis": {
+      "name": "Duelist",
+      "fantasy": "Two lightning-fast strikes in perfect sequence"
+    },
+    "trap_jaw_ant_isopod": {
+      "name": "Coiled Striker",
+      "fantasy": "Curls up, springs out with devastating jaw attack"
+    },
+
+    "leafcutter_ant_rhino_beetle": {
+      "name": "Harvest Tank",
+      "fantasy": "Armored resource gatherer that can't be stopped"
+    },
+    "leafcutter_ant_bombardier_beetle": {
+      "name": "Crop Duster",
+      "fantasy": "Sprays beneficial chemicals that help allies"
+    },
+    "leafcutter_ant_trap_jaw_ant": {
+      "name": "Swift Cutter",
+      "fantasy": "Harvests at incredible speed with precision cuts"
+    },
+    "leafcutter_ant_diving_beetle": {
+      "name": "Kelp Farmer",
+      "fantasy": "Harvests aquatic resources from underwater gardens"
+    },
+    "leafcutter_ant_glowworm": {
+      "name": "Night Harvester",
+      "fantasy": "Works through the night with its own light source"
+    },
+    "leafcutter_ant_assassin_bug": {
+      "name": "Phantom Worker",
+      "fantasy": "Gathers resources undetected behind enemy lines"
+    },
+    "leafcutter_ant_dung_beetle": {
+      "name": "Fertilizer Ant",
+      "fantasy": "Combines harvesting with soil enrichment"
+    },
+    "leafcutter_ant_cicada": {
+      "name": "Singing Worker",
+      "fantasy": "Boosts team morale while working tirelessly"
+    },
+    "leafcutter_ant_mantis": {
+      "name": "Precision Cutter",
+      "fantasy": "Surgical harvesting that wastes nothing"
+    },
+    "leafcutter_ant_isopod": {
+      "name": "Compost Bug",
+      "fantasy": "Breaks down and recycles organic matter efficiently"
+    },
+
+    "diving_beetle_rhino_beetle": {
+      "name": "Submarine Ram",
+      "fantasy": "Charges through water like a living torpedo"
+    },
+    "diving_beetle_bombardier_beetle": {
+      "name": "Torpedo Beetle",
+      "fantasy": "Releases explosive bubbles underwater"
+    },
+    "diving_beetle_trap_jaw_ant": {
+      "name": "Piranha Beetle",
+      "fantasy": "Snapping jaws adapted for aquatic hunting"
+    },
+    "diving_beetle_leafcutter_ant": {
+      "name": "River Runner",
+      "fantasy": "Efficient swimmer that ferries resources across water"
+    },
+    "diving_beetle_glowworm": {
+      "name": "Anglerfish Beetle",
+      "fantasy": "Lures prey with bioluminescent glow underwater"
+    },
+    "diving_beetle_assassin_bug": {
+      "name": "Depth Lurker",
+      "fantasy": "Silent predator in the deep, venomous strikes"
+    },
+    "diving_beetle_dung_beetle": {
+      "name": "Current Rider",
+      "fantasy": "Navigates waterways with perfect precision"
+    },
+    "diving_beetle_cicada": {
+      "name": "Sonar Swimmer",
+      "fantasy": "Echolocates underwater with sonic pulses"
+    },
+    "diving_beetle_mantis": {
+      "name": "Water Mantis",
+      "fantasy": "Lightning reflexes adapted for aquatic strikes"
+    },
+    "diving_beetle_isopod": {
+      "name": "Nautilus Bug",
+      "fantasy": "Curls into a shell and drifts with the current"
+    },
+
+    "glowworm_rhino_beetle": {
+      "name": "Beacon Beetle",
+      "fantasy": "An armored lighthouse that guides allies"
+    },
+    "glowworm_bombardier_beetle": {
+      "name": "Phosphorus Bomber",
+      "fantasy": "Burning light that ignites chemical reactions"
+    },
+    "glowworm_trap_jaw_ant": {
+      "name": "Lure Snapper",
+      "fantasy": "Attracts prey with light, strikes with jaws"
+    },
+    "glowworm_leafcutter_ant": {
+      "name": "Moonlight Worker",
+      "fantasy": "Illuminates work areas for night harvesting"
+    },
+    "glowworm_diving_beetle": {
+      "name": "Abyss Light",
+      "fantasy": "Glows in the deepest waters, revealing secrets"
+    },
+    "glowworm_assassin_bug": {
+      "name": "Will-o-Wisp",
+      "fantasy": "Lures victims with hypnotic light, then strikes"
+    },
+    "glowworm_dung_beetle": {
+      "name": "Star Navigator",
+      "fantasy": "Uses its own light to navigate perfectly"
+    },
+    "glowworm_cicada": {
+      "name": "Disco Bug",
+      "fantasy": "Flashing lights synced with stunning sounds"
+    },
+    "glowworm_mantis": {
+      "name": "Laser Bug",
+      "fantasy": "Focused light beam that cuts like a blade"
+    },
+    "glowworm_isopod": {
+      "name": "Glowball",
+      "fantasy": "A rolling ball of soft, comforting light"
+    },
+
+    "assassin_bug_rhino_beetle": {
+      "name": "Shadow Charger",
+      "fantasy": "Emerges from darkness with unstoppable momentum"
+    },
+    "assassin_bug_bombardier_beetle": {
+      "name": "Toxic Phantom",
+      "fantasy": "Invisible approach, toxic cloud remains"
+    },
+    "assassin_bug_trap_jaw_ant": {
+      "name": "Ghost Striker",
+      "fantasy": "Never seen, only the snap of death"
+    },
+    "assassin_bug_leafcutter_ant": {
+      "name": "Shadow Thief",
+      "fantasy": "Steals resources without being detected"
+    },
+    "assassin_bug_diving_beetle": {
+      "name": "Reef Phantom",
+      "fantasy": "Invisible underwater predator"
+    },
+    "assassin_bug_glowworm": {
+      "name": "Dark Lantern",
+      "fantasy": "Controls light and shadow to deceive prey"
+    },
+    "assassin_bug_dung_beetle": {
+      "name": "Night Navigator",
+      "fantasy": "Finds its way in total darkness"
+    },
+    "assassin_bug_cicada": {
+      "name": "Silent Scream",
+      "fantasy": "Sound that only the target can hear"
+    },
+    "assassin_bug_mantis": {
+      "name": "Void Reaper",
+      "fantasy": "The ultimate ambush predator, instant death"
+    },
+    "assassin_bug_isopod": {
+      "name": "Shadow Ball",
+      "fantasy": "Disappears into shadows, reappears anywhere"
+    },
+
+    "dung_beetle_rhino_beetle": {
+      "name": "Boulder Pusher",
+      "fantasy": "Moves mountains one rock at a time"
+    },
+    "dung_beetle_bombardier_beetle": {
+      "name": "Bomb Roller",
+      "fantasy": "Rolls explosive spheres into enemy territory"
+    },
+    "dung_beetle_trap_jaw_ant": {
+      "name": "Ball Breaker",
+      "fantasy": "Cracks open anything spherical with precision"
+    },
+    "dung_beetle_leafcutter_ant": {
+      "name": "Sphere Farmer",
+      "fantasy": "Shapes and cultivates resources into perfect spheres"
+    },
+    "dung_beetle_diving_beetle": {
+      "name": "River Roller",
+      "fantasy": "Pushes objects across water effortlessly"
+    },
+    "dung_beetle_glowworm": {
+      "name": "Moon Roller",
+      "fantasy": "Navigates by creating its own moonlight"
+    },
+    "dung_beetle_assassin_bug": {
+      "name": "Silent Mover",
+      "fantasy": "Repositions objects without making a sound"
+    },
+    "dung_beetle_cicada": {
+      "name": "Rumble Roller",
+      "fantasy": "Rolls with a thunderous noise that disorients"
+    },
+    "dung_beetle_mantis": {
+      "name": "Precision Roller",
+      "fantasy": "Places objects with surgical accuracy"
+    },
+    "dung_beetle_isopod": {
+      "name": "Twin Rollers",
+      "fantasy": "Can roll itself AND a ball simultaneously"
+    },
+
+    "cicada_rhino_beetle": {
+      "name": "War Horn",
+      "fantasy": "Devastating charge announced by deafening call"
+    },
+    "cicada_bombardier_beetle": {
+      "name": "Siren Bomber",
+      "fantasy": "Screaming dive followed by explosive impact"
+    },
+    "cicada_trap_jaw_ant": {
+      "name": "Shriek Striker",
+      "fantasy": "Stuns with sound, closes with lethal speed"
+    },
+    "cicada_leafcutter_ant": {
+      "name": "Harvest Singer",
+      "fantasy": "Songs that coordinate team efforts perfectly"
+    },
+    "cicada_diving_beetle": {
+      "name": "Depth Caller",
+      "fantasy": "Sonic waves that penetrate water"
+    },
+    "cicada_glowworm": {
+      "name": "Rave Bug",
+      "fantasy": "Pulsing lights synchronized with beats"
+    },
+    "cicada_assassin_bug": {
+      "name": "Whisper Wing",
+      "fantasy": "Ultrasonic calls only targets can hear"
+    },
+    "cicada_dung_beetle": {
+      "name": "Echo Roller",
+      "fantasy": "Uses sound to map terrain while rolling"
+    },
+    "cicada_mantis": {
+      "name": "Screaming Blade",
+      "fantasy": "Sonic distraction masks the killing blow"
+    },
+    "cicada_isopod": {
+      "name": "Bass Drop Bug",
+      "fantasy": "Curls up and emits ground-shaking vibrations"
+    },
+
+    "mantis_rhino_beetle": {
+      "name": "Executioner Beetle",
+      "fantasy": "Armored assassin with lethal precision"
+    },
+    "mantis_bombardier_beetle": {
+      "name": "Acid Blade",
+      "fantasy": "Slicing attacks that leave burning wounds"
+    },
+    "mantis_trap_jaw_ant": {
+      "name": "Twin Fang",
+      "fantasy": "Two strikes faster than the eye can follow"
+    },
+    "mantis_leafcutter_ant": {
+      "name": "Surgeon Ant",
+      "fantasy": "Cuts with medical precision, minimal waste"
+    },
+    "mantis_diving_beetle": {
+      "name": "Reef Reaper",
+      "fantasy": "Underwater assassin with perfect patience"
+    },
+    "mantis_glowworm": {
+      "name": "Prism Mantis",
+      "fantasy": "Refracts light into blinding, cutting beams"
+    },
+    "mantis_assassin_bug": {
+      "name": "Death's Shadow",
+      "fantasy": "The last thing you never see"
+    },
+    "mantis_dung_beetle": {
+      "name": "Orbital Slicer",
+      "fantasy": "Cuts while rolling, impossible to predict"
+    },
+    "mantis_cicada": {
+      "name": "Sonic Scythe",
+      "fantasy": "Sound waves guide the perfect strike"
+    },
+    "mantis_isopod": {
+      "name": "Bladed Pillbug",
+      "fantasy": "Unrolls into a whirlwind of cutting limbs"
+    },
+
+    "isopod_rhino_beetle": {
+      "name": "Cannonball Beetle",
+      "fantasy": "Curls up and launches like a living projectile"
+    },
+    "isopod_bombardier_beetle": {
+      "name": "Acid Ball",
+      "fantasy": "Rolls through enemies leaving a toxic trail"
+    },
+    "isopod_trap_jaw_ant": {
+      "name": "Spring Loaded",
+      "fantasy": "Compressed tension released in one devastating snap"
+    },
+    "isopod_leafcutter_ant": {
+      "name": "Tumble Worker",
+      "fantasy": "Rolls resources back to base effortlessly"
+    },
+    "isopod_diving_beetle": {
+      "name": "Bubble Bug",
+      "fantasy": "Traps air in its curl, floats indefinitely"
+    },
+    "isopod_glowworm": {
+      "name": "Disco Ball",
+      "fantasy": "A rolling light show that dazzles and delights"
+    },
+    "isopod_assassin_bug": {
+      "name": "Phantom Roller",
+      "fantasy": "Disappears mid-roll, reappears behind you"
+    },
+    "isopod_dung_beetle": {
+      "name": "Perfect Sphere",
+      "fantasy": "The most perfectly round bug in existence"
+    },
+    "isopod_cicada": {
+      "name": "Rattle Ball",
+      "fantasy": "Makes noise while rolling to confuse predators"
+    },
+    "isopod_mantis": {
+      "name": "Spike Roller",
+      "fantasy": "Extends blades while rolling for damage"
+    }
+  }
+}

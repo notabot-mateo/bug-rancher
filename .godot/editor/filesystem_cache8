@@ -2,8 +2,9 @@ ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1769890657
 icon.svg::CompressedTexture2D::1403928337824351208::1769890649::1769890657::1::::<><>::
 README.md::TextFile::-1::1769890494::0::1::::<><>::
-::res://data/::1769890494
+::res://data/::1769891707
 bugs.json::JSON::-1::1769890494::0::1::::<><>::
+hybrid_names.json::JSON::-1::1769891707::0::1::::<><>::
 ::res://scenes/::1769891455
 breeding_screen.tscn::PackedScene::-1::1769891455::0::1::::<><>::res://scripts/breeding_screen.gd
 collection_screen.tscn::PackedScene::-1::1769890641::0::1::::<><>::res://scripts/collection_screen.gd
@@ -22,6 +23,6 @@ collection_screen.gd::GDScript::-1::1769890641::0::1::::<>Control<>::
 compendium_screen.gd::GDScript::-1::1769890589::0::1::::<>Control<>::
 game_manager.gd::GDScript::-1::1769891470::0::1::::<>Node<>::
 genetics.gd::GDScript::-1::1769890674::0::1::::GeneticsSystem<>Node<>::
-hybrid_generator.gd::GDScript::-1::1769891392::0::1::::HybridGenerator<>Node<>::
+hybrid_generator.gd::GDScript::-1::1769891722::0::1::::HybridGenerator<>Node<>::
 main.gd::GDScript::-1::1769891464::0::1::::<>Control<>::
 species_slot.gd::GDScript::-1::1769890589::0::1::::<>Button<>::

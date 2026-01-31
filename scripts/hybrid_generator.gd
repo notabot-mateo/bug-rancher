@@ -9,6 +9,20 @@ const SECONDARY_WEIGHT := 0.4
 
 ## Cache of generated hybrid data
 var _hybrid_cache: Dictionary = {}
+var _hybrid_names: Dictionary = {}
+
+func _ready() -> void:
+	_load_hybrid_names()
+
+func _load_hybrid_names() -> void:
+	var file = FileAccess.open("res://data/hybrid_names.json", FileAccess.READ)
+	if file:
+		var json = JSON.new()
+		var error = json.parse(file.get_as_text())
+		file.close()
+		if error == OK:
+			_hybrid_names = json.data.get("hybrids", {})
+			print("HybridGenerator: Loaded ", _hybrid_names.size(), " hybrid names")
 
 ## Get or generate a hybrid species
 ## dominant_id comes first in the name, gets 60% stat weight
@@ -89,18 +103,28 @@ func _generate_hybrid(dominant_id: String, secondary_id: String) -> Dictionary:
 		if ability not in combined_abilities and combined_abilities.size() < 4:
 			combined_abilities.append(ability)
 	
-	# Generate name
-	var dom_name = dominant.name.split(" ")[0]  # First word
-	var sec_name = secondary.name.split(" ")[0]
-	var hybrid_name = "%s-%s" % [dom_name, sec_name]
+	# Look up creative name from hybrid_names.json
+	var name_key = "%s_%s" % [dominant_id, secondary_id]
+	var hybrid_name: String
+	var fantasy: String
 	
-	# Generate fantasy/description
-	var fantasy = "A hybrid combining the %s's %s with the %s's %s." % [
-		dominant.name.to_lower(),
-		dominant.get("fantasy", "traits").split(",")[0].to_lower(),
-		secondary.name.to_lower(),
-		secondary.get("fantasy", "traits").split(",")[0].to_lower()
-	]
+	if _hybrid_names.has(name_key):
+		hybrid_name = _hybrid_names[name_key].get("name", "")
+		fantasy = _hybrid_names[name_key].get("fantasy", "")
+	
+	# Fallback to generated name if not found
+	if hybrid_name.is_empty():
+		var dom_name = dominant.name.split(" ")[0]
+		var sec_name = secondary.name.split(" ")[0]
+		hybrid_name = "%s-%s" % [dom_name, sec_name]
+	
+	if fantasy.is_empty():
+		fantasy = "A hybrid combining the %s's %s with the %s's %s." % [
+			dominant.name.to_lower(),
+			dominant.get("fantasy", "traits").split(",")[0].to_lower(),
+			secondary.name.to_lower(),
+			secondary.get("fantasy", "traits").split(",")[0].to_lower()
+		]
 	
 	return {
 		"id": hybrid_id,
